@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pádel Club</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="logo">PÁDEL<span>CLUB</span></div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#pistas">Pistas</a></li>
+      <li><a href="#clases">Clases</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#reservas">Mis Reservas</a></li>
+    </ul>
+    <button class="btn-reservar" onclick="abrirModal()">Reservar pista</button>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <p class="hero-tag">⚡ Club de pádel #1 en la ciudad</p>
+      <h1>JUEGA.<br>COMPITE.<br>DISFRUTA.</h1>
+      <p class="hero-sub">Instalaciones de primer nivel, entrenadores profesionales y la mejor comunidad de pádel.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="abrirModal()">Reservar ahora</button>
+        <a href="#clases" class="btn-outline">Ver clases</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <span class="badge-num" id="contador">0</span>
+      <span class="badge-txt">jugadores<br>activos</span>
+    </div>
+  </section>
+
+  <!-- PISTAS -->
+  <section class="pistas" id="pistas">
+    <h2 class="section-title">Nuestras <span>Pistas</span></h2>
+    <p class="section-sub">4 pistas cubiertas y 2 al aire libre con césped artificial de alta calidad.</p>
+    <div class="pistas-grid">
+      <div class="pista-card" data-pista="Pista 1 — Indoor Premium">
+        <div class="pista-num">01</div>
+        <h3>Indoor Premium</h3>
+        <p>Cristal panorámico, iluminación LED y suelo de césped certificado.</p>
+        <span class="pista-badge disponible">Disponible</span>
+      </div>
+      <div class="pista-card" data-pista="Pista 2 — Outdoor Pro">
+        <div class="pista-num">02</div>
+        <h3>Outdoor Pro</h3>
+        <p>Al aire libre con iluminación nocturna y gradas para espectadores.</p>
+        <span class="pista-badge ocupada">Ocupada</span>
+      </div>
+      <div class="pista-card" data-pista="Pista 3 — Indoor Classic">
+        <div class="pista-num">03</div>
+        <h3>Indoor Classic</h3>
+        <p>Pista estándar perfecta para partidos casuales y entrenamiento.</p>
+        <span class="pista-badge disponible">Disponible</span>
+      </div>
+      <div class="pista-card" data-pista="Pista 4 — VIP Suite">
+        <div class="pista-num">04</div>
+        <h3>VIP Suite</h3>
+        <p>Pista exclusiva con zona privada, vestuario propio y servicio de bebidas.</p>
+        <span class="pista-badge vip">VIP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASES -->
+  <section class="clases" id="clases">
+    <h2 class="section-title">Clases & <span>Entrenamientos</span></h2>
+    <div class="clases-grid">
+      <div class="clase-card">
+        <div class="clase-icon">🎾</div>
+        <h3>Iniciación</h3>
+        <p>Para quienes empiezan desde cero. Aprende las bases técnicas y tácticas del pádel.</p>
+        <div class="clase-info"><span>Lun / Mié / Vie</span><span>9:00 – 10:30</span></div>
+      </div>
+      <div class="clase-card destacada">
+        <div class="clase-icon">🏆</div>
+        <h3>Competición</h3>
+        <p>Mejora tu juego al máximo nivel. Preparación para torneos federados y amateur.</p>
+        <div class="clase-info"><span>Mar / Jue / Sáb</span><span>18:00 – 20:00</span></div>
+        <span class="tag-popular">Más popular</span>
+      </div>
+      <div class="clase-card">
+        <div class="clase-icon">👨‍👩‍👧</div>
+        <h3>Escuela Infantil</h3>
+        <p>Programa especial para niños de 6 a 14 años. Deporte, diversión y valores.</p>
+        <div class="clase-info"><span>Sáb / Dom</span><span>10:00 – 11:30</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <h2 class="section-title">¿Dónde <span>Estamos?</span></h2>
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <div class="info-item">📍 <strong>Dirección:</strong> Calle del Pádel 12, Ciudad Deportiva</div>
+        <div class="info-item">📞 <strong>Teléfono:</strong> +34 900 123 456</div>
+        <div class="info-item">✉️ <strong>Email:</strong> hola@padelclub.es</div>
+        <div class="info-item">🕐 <strong>Horario:</strong> Lun–Dom, 7:00 – 23:00</div>
+      </div>
+      <div class="mapa-placeholder">
+        <span>📍 Google Maps</span>
+        <p>Ciudad Deportiva, Calle del Pádel 12</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLA DE RESERVAS -->
+  <section class="reservas-section" id="reservas">
+    <h2 class="section-title">Mis <span>Reservas</span></h2>
+    <p class="section-sub">Historial de todas tus reservas guardadas localmente.</p>
+
+    <div class="reservas-toolbar">
+      <span class="reservas-count" id="reservasCount">0 reservas</span>
+      <button class="btn-limpiar" onclick="limpiarReservas()">🗑 Borrar todas</button>
+    </div>
+
+    <div class="tabla-wrapper">
+      <table class="tabla-reservas" id="tablaReservas">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Pista</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Registrada</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tablaBody">
+          <!-- Las filas se generan desde JS -->
+        </tbody>
+      </table>
+      <div class="tabla-vacia" id="tablaVacia">
+        <span>🎾</span>
+        <p>Aún no tienes reservas guardadas.</p>
+        <button class="btn-primary" onclick="abrirModal()">Hacer mi primera reserva</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTÍCULOS -->
+  <section class="articulos" id="articulos">
+    <h2 class="section-title">Últimos <span>Artículos</span></h2>
+    <div class="articulos-grid">
+      <article class="articulo">
+        <h3>Cómo elegir tu pala de pádel</h3>
+        <p>Consejos para seleccionar la pala adecuada según tu nivel y estilo de juego.</p>
+      </article>
+      <article class="articulo">
+        <h3>Mejores palas para principiantes</h3>
+        <p>Listado de palas recomendadas para quienes se inician en el pádel.</p>
+      </article>
+      <article class="articulo">
+        <h3>Errores comunes en el pádel</h3>
+        <p>Descubre los fallos más habituales y cómo evitarlos en la pista.</p>
+      </article>
+      <article class="articulo">
+        <h3>Entrenamiento físico para jugadores</h3>
+        <p>Rutinas y ejercicios para mejorar tu rendimiento en pádel.</p>
+      </article>
+      <article class="articulo">
+        <h3>Reglas básicas del pádel</h3>
+        <p>Un repaso a las normas esenciales que debes conocer.</p>
+      </article>
+      <article class="articulo">
+        <h3>Cómo cuidar tu pala</h3>
+        <p>Recomendaciones para mantener tu pala en perfecto estado.</p>
+      </article>
+      <article class="articulo">
+        <h3>Tácticas de juego en dobles</h3>
+        <p>Estrategias para mejorar la coordinación y ganar partidos en pareja.</p>
+      </article>
+      <article class="articulo">
+        <h3>Accesorios imprescindibles</h3>
+        <p>Los complementos que no pueden faltar en tu bolsa de pádel.</p>
+      </article>
+      <article class="articulo">
+        <h3>Historia del pádel</h3>
+        <p>Un breve recorrido por el origen y evolución de este deporte.</p>
+      </article>
+      <article class="articulo">
+        <h3>Cómo evitar lesiones</h3>
+        <p>Consejos prácticos para prevenir lesiones frecuentes en pádel.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">PÁDEL<span>CLUB</span></div>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-btn">📘 Facebook</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">📸 Instagram</a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter" class="social-btn">🐦 Twitter</a>
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-btn">▶️ YouTube</a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok" class="social-btn">🎵 TikTok</a>
+    </div>
+    <p>© 2026 PádelClub. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- MODAL RESERVA -->
+  <div class="modal-overlay" id="modalOverlay" onclick="cerrarModalOverlay(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="cerrarModal()">✕</button>
+      <h2>Reservar Pista</h2>
+      <div class="form-group">
+        <label>Nombre completo</label>
+        <input type="text" id="nombre" placeholder="Tu nombre" />
+      </div>
+      <div class="form-group">
+        <label>Pista</label>
+        <select id="pista">
+          <option>Pista 1 — Indoor Premium</option>
+          <option>Pista 2 — Outdoor Pro</option>
+          <option>Pista 3 — Indoor Classic</option>
+          <option>Pista 4 — VIP Suite</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Fecha</label>
+        <input type="date" id="fecha" />
+      </div>
+      <div class="form-group">
+        <label>Hora</label>
+        <select id="hora">
+          <option>08:00</option><option>09:00</option><option>10:00</option>
+          <option>11:00</option><option>12:00</option><option>16:00</option>
+          <option>17:00</option><option>18:00</option><option>19:00</option>
+          <option>20:00</option><option>21:00</option>
+        </select>
+      </div>
+      <button class="btn-primary" style="width:100%;margin-top:8px" onclick="confirmarReserva()">Confirmar reserva</button>
+      <div id="reserva-msg" class="reserva-msg"></div>
+    </div>
+  </div>
+
+  // Añade botones de redes sociales
+
+  <script src="main.js"></script>
+</body>
+</html>
